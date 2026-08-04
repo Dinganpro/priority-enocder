@@ -1,0 +1,19 @@
+`timescale 1ns / 1ps
+
+module encoder( input i0,i1,i2,i3,
+output reg a,b);
+always@(*)begin
+casez({i3,i2,i1,i0})
+4'b0001:begin
+a=1'b0;b=1'b0;end
+4'b001?:begin
+a=1'b0;b=1'b1;end
+4'b01??:begin
+a=1'b1;b=1'b0;end
+4'b1???:begin
+a=1'b1;b=1'b1;end
+default:begin
+a=1'b0;b=1'b0;end
+endcase
+end
+endmodule
