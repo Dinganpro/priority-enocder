@@ -1,0 +1,31 @@
+`timescale 1ns / 1ps
+
+module encoder( input i0,i1,i2,i3,
+output reg a,b);
+
+always@(*)
+begin
+a=1'b0;
+b=1'b0;
+if (i3)
+begin
+a=1'b1;
+b=1'b1;
+end
+else if (i2)
+begin
+a=1'b1;
+b=1'b0;
+end
+else if (i1)
+begin
+a=1'b0;
+b=1'b1;
+end
+else if (i0)
+begin
+a=1'b0;
+b=1'b0;
+end
+end
+endmodule
